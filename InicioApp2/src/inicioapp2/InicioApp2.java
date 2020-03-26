@@ -5,9 +5,7 @@ import java.util.Scanner;
 public class InicioApp2 {
 
     static char letra[];
-    static int[] contador;
-    static int numPalabras;
-    static int numCaracteres;
+     static int[] contador;
     /**
      * @param args the command line arguments
      */
@@ -24,28 +22,12 @@ public class InicioApp2 {
             'w', 'x', 'y', 'z'};
         contador = new int[letra.length];
         
-        contarCaracteresTotal(frase);
-        contarNumeroPalabras(frase);
-        contarTodosCaracteres(frase);
-        
-        textoCaracteresTotal(numCaracteres);
-        textoNumeroPalabras(numPalabras);
-        textoTodosCaracteres(contador,letra);
-        
+        contarpalabras(frase);
+        mostrarResultado(frase);
     }
-    
-    private static void contarCaracteresTotal(String frase){
-        numCaracteres = 0; 
-        for (int i = 0; i < frase.length(); i++) {  
-            if (frase.charAt(i) != ' ') {
-                numCaracteres++;
-                }
-            }
-        
-    }
-    
-    private static void contarNumeroPalabras (String frase){
-        numPalabras = 1;
+
+    private static void contarpalabras(String frase) {
+        int numPalabras = 1;
         boolean espaciosSeguidos = false;
         frase = frase.trim();
         for (int i = 0; i < frase.length(); i++) {  
@@ -57,11 +39,19 @@ public class InicioApp2 {
             } else {
                 espaciosSeguidos = false;
             }
+            
         }
-    } 
-    
-    private static void contarTodosCaracteres(String frase){
-         for (int i = 0; i < frase.length(); i++) {  
+       System.out.println("Hay " + numPalabras + "  palabras");
+       
+        int numCaracteres = 0; 
+        for (int i = 0; i < frase.length(); i++) {  
+            if (frase.charAt(i) != ' ') {
+                numCaracteres++;
+                }
+            }
+        System.out.println("Hay " + numCaracteres + " letras");
+            
+        for (int i = 0; i < frase.length(); i++) {  
                 if (frase.charAt(i) != ' ') {
                        for (int j = 0; j < letra.length; j++) {
                            if (frase.charAt(i) == letra[j]) {
@@ -70,17 +60,10 @@ public class InicioApp2 {
                        }
                 }
             }
-    }
-    
-    private static void textoCaracteresTotal(int numCaracteres){
-        System.out.println("Hay " + numPalabras + "  palabras");
-    }
-    
-    private static void textoNumeroPalabras(int numPalabras){
-        System.out.println("Hay " + numCaracteres + " letras");
-    }
-    
-    private static void textoTodosCaracteres(int[] contador, char[] letra){
+        
+        
+        }
+    private static void mostrarResultado(String frase){
         for(int i=0;i<letra.length;i++){
             if(contador[i]!=0){
                 System.out.println(letra[i]+" se repite " + contador[i]);
@@ -88,5 +71,6 @@ public class InicioApp2 {
             
         }
     }
-     
+       
+    
 }
