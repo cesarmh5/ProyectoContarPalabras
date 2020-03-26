@@ -2,6 +2,8 @@ package inicioapp2;
 
 public class ContarPalabras {
 
+       //Este método cuenta las palabras de la frase que introducimos
+    
     static void contarpalabras(String frase, int[] contador, char letra[]) {
         int numPalabras = 1;
         boolean espaciosSeguidos = false;
