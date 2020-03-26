@@ -12,7 +12,7 @@ public class InicioApp2 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TOD code application logic here
+        // TODO code application logic here
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Escribe una frase");
